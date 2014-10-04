@@ -13,6 +13,7 @@
         <item>My Profile</item>
         <item>Payment</item>
         <item>My Rides</item>
+        <item>Notifications</item>
     </string-array>
 
 </resources>

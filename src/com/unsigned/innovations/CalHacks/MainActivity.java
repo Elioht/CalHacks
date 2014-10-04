@@ -2,6 +2,7 @@ package com.unsigned.innovations.CalHacks;
 
 
 import android.R.layout;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -9,8 +10,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +28,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	private ActionBarDrawerToggle drawerListener;
 	private ListView listView;
 	private String[] options;
+	private MyAdapter myAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,8 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		setContentView(R.layout.activity_main);
 		drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
 		listView = (ListView)findViewById(R.id.drawerList);
+		myAdapter = new MyAdapter(this);
+		listView.setAdapter(myAdapter);
 		options = getResources().getStringArray(R.array.nav_drawer);
 		drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_navigation_drawer, R.string.drawer_open, R.string.drawer_close){
 
@@ -98,7 +105,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	
 	public void selectItem(int position){
 		listView.setItemChecked(position, true);
-		setTitle("Hello world");
+		setTitle(options[position]);
 	}
 
 	public void setTitle(String title){
@@ -109,17 +116,27 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 
 //fetching string array
 class MyAdapter extends BaseAdapter{
+	private Context context;
+	String[] options;
+	int[] images = {R.drawable.profile, R.drawable.ic_stat_dollar_512, R.drawable.car2, R.drawable.ic_action_mail};
+	
+	public MyAdapter(Context context) {
+		// TODO Auto-generated constructor stub
+		this.context = context;
+		options = context.getResources().getStringArray(R.array.nav_drawer);
+		
+	}
 
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return options.length;
 	}
 
 	@Override
-	public Object getItem(int arg0) {
+	public Object getItem(int positions) {
 		// TODO Auto-generated method stub
-		return null;
+		return options[positions];
 	}
 
 	@Override
@@ -129,9 +146,27 @@ class MyAdapter extends BaseAdapter{
 	}
 
 	@Override
-	public View getView(int arg0, View arg1, ViewGroup arg2) {
+	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		return null;
+		View row = null;
+		if(convertView == null)
+		{
+			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			
+			row = inflater.inflate(R.layout.custom_row, parent, false);
+		}
+		else{
+			row = convertView;
+		}
+		
+		TextView textView1 = (TextView) row.findViewById(R.id.textView1);
+		ImageView imageView1 = (ImageView) row.findViewById(R.id.imageView1);
+		
+		textView1.setText(options[position]);
+		imageView1.setImageResource(images[position]);
+		
+		return row;
+		
 	}
 	
 }
