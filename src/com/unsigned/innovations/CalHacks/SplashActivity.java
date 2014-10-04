@@ -2,51 +2,49 @@ package com.unsigned.innovations.CalHacks;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+<<<<<<< HEAD
+import android.content.SharedPreferences;
+=======
+>>>>>>> 843849e5a5fc5780c2d0c84da52d93ac46d68603
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+<<<<<<< HEAD
+import android.view.Window;
+import android.view.WindowManager;
+=======
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+
 public class SplashActivity extends ActionBarActivity {
+	
+	private final int SPLASH_DISPLAY_LENGHT = 2000;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_splash);
-		
-		Button button = (Button) findViewById(R.id.button1);
-		
-		button.setOnClickListener(new OnClickListener() {
-			
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-				startActivity(intent);
-				finish();
-				
-				
-			}
-		});
-	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.splash, menu);
-		return true;
-	}
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_splash);
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+
+
+        /* New Handler to start the Menu-Activity 
+         * and close this Splash-Screen after some seconds.*/
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+               
+        		Intent mainIntent = new Intent(SplashActivity.this,LoginActivity.class);
+                startActivity(mainIntent);
+                finish();
+            }
+        }, SPLASH_DISPLAY_LENGHT);
+    }
+	
 }
