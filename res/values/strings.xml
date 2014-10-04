@@ -29,5 +29,8 @@
     <string name="minus">-</string>
     <string name="default_seats">0</string>
     <string name="submit">Submit</string>
+    <string name="title_activity_pay_your_driver">PayYourDriver</string>
+    <string name="piggy_back_thanks">Thanks For Using Piggy Back!</string>
+    <string name="pay_driver">Don\'t Forget To Pay Your Driver!</string>
 
 </resources>
