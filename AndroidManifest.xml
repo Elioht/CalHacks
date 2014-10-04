@@ -24,10 +24,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".RideSetup"
             android:label="@string/title_activity_ride_setup" >
         </activity>
+        
+        <activity 
+            android:name=".MainActivity"
+            ></activity>
+
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@
         <item>My Profile</item>
         <item>Payment</item>
         <item>My Rides</item>
+        <item>Notifications</item>
     </string-array>
 
     <string name="title_activity_ride_set_up">RideSetUp</string>
