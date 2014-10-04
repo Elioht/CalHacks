@@ -1,7 +1,6 @@
 package com.unsigned.innovations.CalHacks;
 
 
-import android.R.layout;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
