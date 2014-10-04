@@ -4,5 +4,30 @@
     <string name="app_name">CalHacks</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+
+    <string-array name="nav_drawer">
+        <item>My Profile</item>
+        <item>Payment</item>
+        <item>My Rides</item>
+        <item>Notifications</item>
+    </string-array>
+
+    <string name="title_activity_ride_set_up">RideSetUp</string>
+    <string name="title_activity_time_picker_fragment">TimePickerFragment</string>
+    <string name="title_activity_ride_setup">RideSetup</string>
+    <string name="address">Address</string>
+    <string name="seatsAvailable">Seats Available</string>
+    <string name="compensation">Compensation</string>
+    <string name="amount">$0.00</string>
+    <string name="flat_rate">Flat Rate</string>
+    <string name="per_person">Per Person</string>
+    <string name="donations_welcomed">Donations Welcomed</string>
+    <string name="date">Date</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="default_seats">0</string>
+    <string name="submit">Submit</string>
 
 </resources>
