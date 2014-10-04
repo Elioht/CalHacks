@@ -7,18 +7,19 @@
     <ImageView
         android:id="@+id/emailConfirmationImageView"
         android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_height="47dp"
+        android:gravity="center_vertical"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         />
 
     <TextView
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:layout_height="wrap_content"
-        
+        android:textColor = "#000000"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

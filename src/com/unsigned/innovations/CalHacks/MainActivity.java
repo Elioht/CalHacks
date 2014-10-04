@@ -1,9 +1,9 @@
 package com.unsigned.innovations.CalHacks;
 
-
-import android.R.layout;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -12,13 +12,11 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
@@ -118,12 +116,13 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 class MyAdapter extends BaseAdapter{
 	private Context context;
 	String[] options;
-	int[] images = {R.drawable.profile, R.drawable.ic_stat_dollar_512, R.drawable.car2, R.drawable.ic_action_mail};
+	int[] images = {R.drawable.profile2, R.drawable.payment, R.drawable.car2, R.drawable.notification};
 	
 	public MyAdapter(Context context) {
 		// TODO Auto-generated constructor stub
 		this.context = context;
 		options = context.getResources().getStringArray(R.array.nav_drawer);
+		
 		
 	}
 
@@ -161,12 +160,14 @@ class MyAdapter extends BaseAdapter{
 		
 		TextView textView1 = (TextView) row.findViewById(R.id.textView1);
 		ImageView imageView1 = (ImageView) row.findViewById(R.id.emailConfirmationImageView);
+		//Typeface customText = Typeface.createFromAsset(context.getAssets(), "fonts/Airstream.ttf");
+		//textView1.setTypeface(customText);
 		
 		textView1.setText(options[position]);
 		imageView1.setImageResource(images[position]);
 		
-		return row;
-		
+		return row;	
 	}
+	
 	
 }
