@@ -160,7 +160,7 @@ class MyAdapter extends BaseAdapter{
 		}
 		
 		TextView textView1 = (TextView) row.findViewById(R.id.textView1);
-		ImageView imageView1 = (ImageView) row.findViewById(R.id.imageView1);
+		ImageView imageView1 = (ImageView) row.findViewById(R.id.emailConfirmationImageView);
 		
 		textView1.setText(options[position]);
 		imageView1.setImageResource(images[position]);
