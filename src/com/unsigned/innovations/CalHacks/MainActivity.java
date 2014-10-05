@@ -1,10 +1,14 @@
 package com.unsigned.innovations.CalHacks;
 
 
+import android.app.FragmentTransaction;
+
+
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.AdapterView;
@@ -32,6 +36,14 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		android.support.v4.app.FragmentTransaction  fragmentTransaction = fragmentManager.beginTransaction();
+		
+		MapsFragment mapFragment = new MapsFragment();
+		fragmentTransaction.add(R.id.mainContent, mapFragment);
+		fragmentTransaction.commit();
+		
 		drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
 		listView = (ListView)findViewById(R.id.drawerList);
 		myAdapter = new MyAdapter(this);
@@ -115,7 +127,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 class MyAdapter extends BaseAdapter{
 	private Context context;
 	String[] options;
-	int[] images = {R.drawable.profile2, R.drawable.payment, R.drawable.car2, R.drawable.notification};
+	int[] images = {R.drawable.home,R.drawable.profile2, R.drawable.payment, R.drawable.car2, R.drawable.notification};
 	
 	public MyAdapter(Context context) {
 		// TODO Auto-generated constructor stub

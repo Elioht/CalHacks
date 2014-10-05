@@ -2,6 +2,7 @@ package com.unsigned.innovations.CalHacks;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -62,6 +63,9 @@ public class EmailFragment extends Fragment {
 						      Context.INPUT_METHOD_SERVICE);
 						imm.hideSoftInputFromWindow(emailAddressEditText.getWindowToken(), 0);
 					comm.response(true);
+					Intent intent = new Intent(getActivity(), MainActivity.class);
+					startActivity(intent);
+					
 				} else {
 					emailConfirmationImageView.setImageDrawable(getResources()
 							.getDrawable(R.drawable.abc_ic_clear));
