@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical" >
+
+
  
     <TextView
         android:id="@+id/textView1"
@@ -38,5 +40,6 @@
         android:src="@drawable/red" />
 
 "
+
 
 </RelativeLayout>
