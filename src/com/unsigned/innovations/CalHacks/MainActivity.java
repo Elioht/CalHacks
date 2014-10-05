@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -96,7 +97,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
 		//switch statement
-		//launch activity depending onthe positin
+		//launch activity depending on the position
 		selectItem(position);
 	}
 	
@@ -121,8 +122,6 @@ class MyAdapter extends BaseAdapter{
 		// TODO Auto-generated constructor stub
 		this.context = context;
 		options = context.getResources().getStringArray(R.array.nav_drawer);
-		
-		
 	}
 
 	@Override
@@ -167,4 +166,6 @@ class MyAdapter extends BaseAdapter{
 		
 		return row;	
 	}
+	
+	
 }
