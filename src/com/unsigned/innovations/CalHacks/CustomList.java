@@ -3,6 +3,7 @@ package com.unsigned.innovations.CalHacks;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +16,14 @@ import android.widget.ExpandableListView.OnChildClickListener;
 public class CustomList extends ArrayAdapter<String> {
 	private final Activity context;
 	private final ArrayList<String> web;
-	private final ArrayList<Integer> imageId;
+	private final ArrayList<Bitmap> imageId;
 	
 
-	public CustomList(Activity context, ArrayList<String> listItems, ArrayList<Integer> imageId) {
+	public CustomList(Activity context, ArrayList<String> listItems, ArrayList<Bitmap> imageId2) {
 		super(context, R.layout.custom_row, listItems);
 		this.context = context;
 		this.web = listItems;
-		this.imageId = imageId;
+		this.imageId = imageId2;
 	}
 
 	@Override
@@ -34,7 +35,7 @@ public class CustomList extends ArrayAdapter<String> {
 		txtTitle.setHeight(30);
 	    txtTitle.setMinimumHeight(30);
 		txtTitle.setText(web.get(position));
-		imageView.setImageResource(imageId.get(position));
+		imageView.setImageBitmap(imageId.get(position));
 		return rowView;
 	}
 }
