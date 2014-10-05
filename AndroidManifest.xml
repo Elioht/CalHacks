@@ -3,12 +3,24 @@
     package="com.unsigned.innovations.CalHacks"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <uses-feature 
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
-
+	<permission android:name="com.unsigned.innovations.CalHacks.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+	<uses-permission android:name="com.unsigned.innovations.CalHacks.permission.MAPS_RECEIVE"/>
     <uses-permission android:name="android.permission.INTERNET" />
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -22,14 +34,17 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+            android:icon="@drawable/logotext"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".SplashActivity"
-            android:label="@string/app_name" >
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,15 +54,16 @@
          <activity
             android:name = ".LoginActivity"
             android:icon="@drawable/logotext"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateVisible">
          </activity>
         <activity
             android:name=".FindRide"
-            android:label="@string/title_activity_find_ride" >
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme"  >
         </activity>
         <activity
             android:name=".RideSetup"
-            android:label="@string/title_activity_ride_setup"
             android:icon="@drawable/logotext"
             android:theme="@style/AppTheme" >
         </activity>
@@ -58,13 +74,13 @@
         </activity>
         <activity
             android:name=".PayYourDriver"
-            android:label="@string/title_activity_pay_your_driver"
             android:icon="@drawable/logotext"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".VenmoTest"
-            android:label="@string/title_activity_venmo_test" >
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme"  >
         </activity>
 
         <service
@@ -86,9 +102,22 @@
             android:label = "title_facebook_login"
     		>
         </activity>
+
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyC9Vu1ZkM_FE8Z_qnJexHh0JtAQPVvQYbQ" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
         
         <meta-data android:value="@string/facebook_app_id" android:name="com.facebook.sdk.ApplicationId"/>
          
+
     </application>
 
 </manifest>
+
+

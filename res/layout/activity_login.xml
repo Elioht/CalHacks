@@ -13,29 +13,36 @@
     <LinearLayout 
         android:layout_width="match_parent"
     	android:layout_height="match_parent"
+    	android:id="@+id/emailContainer"
 	    android:layout_weight="1.0"
 	    android:orientation="vertical">
 
+    <!--  
     <fragment
         android:id="@+id/fragment1"
         android:name="com.unsigned.innovations.CalHacks.EmailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+        
+      -->
     
     </LinearLayout>
     
     <LinearLayout
         android:layout_width="match_parent"
+        android:id="@+id/facebookContainer"
         android:layout_height="match_parent"
         android:layout_weight="1.0"
         android:orientation="vertical" >
 
+    <!-- 
     <fragment
         android:id="@+id/fragment2"
         android:name="com.unsigned.innovations.CalHacks.FacebookFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+        -->
     
     </LinearLayout>
 
