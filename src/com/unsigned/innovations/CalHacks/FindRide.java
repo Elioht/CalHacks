@@ -38,9 +38,7 @@ public class FindRide extends Activity {
 	ArrayList<String> listItems = new ArrayList<String>();
 	ArrayList<Bitmap> imageId = new ArrayList<Bitmap>();
 	ArrayList<String> urls = new ArrayList<String>();
-	ArrayList<Double> ratings = new ArrayList<Double>();
-	ArrayList<Integer> seats = new ArrayList<Integer>();
-	ArrayList<String> destinations = new ArrayList<String>();
+	ArrayList<String> userIDs = new ArrayList<String>();
 	
 	
 	CustomRides adapter = null;
@@ -66,13 +64,16 @@ public class FindRide extends Activity {
 						// TODO Auto-generated method stub
 
 						for (DataSnapshot ds : arg0.getChildren()) {
+							
+							userIDs.add(ds.getValue().toString());
+							
 							listItems.add(ds.child("first_name").getValue()
 									.toString()
 									+ " "
 									+ ds.child("last_name").getValue().toString()
 									+ "\n" + ds.child("driving_to").getValue().toString()
-									+ "\n" + ds.child("rating").getValue().toString()
-									+ "\n" + ds.child("seats").getValue().toString());
+									+ "\nRating: " + ds.child("rating").getValue().toString()
+									+ "\nSeats Available: " + ds.child("seats").getValue().toString());
 							
 							
 							
@@ -133,7 +134,7 @@ public class FindRide extends Activity {
 
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
-						int position, long id) {
+						final int position, long id) {
 
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							FindRide.this);
@@ -147,8 +148,9 @@ public class FindRide extends Activity {
 								public void onClick(DialogInterface dialog,
 										int id) {
 
-									Intent features = new Intent(FindRide.this,
-											SplashActivity.class);
+									Intent features = new Intent(getBaseContext(),
+											VenmoTest.class); 
+									features.putExtra("userid", userIDs.get(position));
 									startActivity(features);
 								}
 							});
