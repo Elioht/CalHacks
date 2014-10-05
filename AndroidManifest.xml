@@ -25,14 +25,26 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login_activity" >
+        </activity>
+        <activity
             android:name=".RideSetup"
             android:label="@string/title_activity_ride_setup" >
+        </activity>
+        <activity
+            android:name=".TabMyRides"
+            android:label="MyRideTabs" >
         </activity>
         <activity android:name=".MainActivity" >
         </activity>
         <activity
             android:name=".PayYourDriver"
             android:label="@string/title_activity_pay_your_driver" >
+        </activity>
+        <activity
+            android:name=".TempFrag"
+            android:label="@string/title_activity_temp_frag" >
         </activity>
     </application>
 

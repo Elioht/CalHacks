@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.example.inter_fragment.FragmentA"
+        android:name="com.unsigned.innovation.CalHacks.LoginActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.example.inter_fragment.FragmentB"
+        android:name="com.unsigned.innovation.CalHacks.LoginActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/fragment1"

@@ -32,5 +32,7 @@
     <string name="title_activity_pay_your_driver">PayYourDriver</string>
     <string name="piggy_back_thanks">Thanks For Using Piggy Back!</string>
     <string name="pay_driver">Don\'t Forget To Pay Your Driver!</string>
+    <string name="title_activity_login_activity">Login</string>
+    <string name="title_activity_temp_frag">TempFrag</string>
 
 </resources>
