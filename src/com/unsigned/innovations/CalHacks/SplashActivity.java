@@ -17,8 +17,7 @@ import android.widget.Button;
 public class SplashActivity extends ActionBarActivity {
 	
 	private final int SPLASH_DISPLAY_LENGHT = 2000;
-
-
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,8 +25,6 @@ public class SplashActivity extends ActionBarActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-
-
 
         /* New Handler to start the Menu-Activity 
          * and close this Splash-Screen after some seconds.*/
@@ -41,5 +38,4 @@ public class SplashActivity extends ActionBarActivity {
             }
         }, SPLASH_DISPLAY_LENGHT);
     }
-	
 }
