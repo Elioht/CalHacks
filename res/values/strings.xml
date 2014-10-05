@@ -14,6 +14,7 @@
         <item>Notifications</item>
     </string-array>
 
+    <string name="title_activity_find_ride">FindRide</string>
     <string name="title_activity_ride_set_up">RideSetUp</string>
     <string name="title_activity_time_picker_fragment">TimePickerFragment</string>
     <string name="title_activity_ride_setup">RideSetup</string>
@@ -32,6 +33,9 @@
     <string name="title_activity_pay_your_driver">PayYourDriver</string>
     <string name="piggy_back_thanks">Thanks For Using Piggy Back!</string>
     <string name="pay_driver">Don\'t Forget To Pay Your Driver!</string>
+    <string name="title_activity_venmo_test">VenmoTest</string>
+    <string name="pay_with_venmo">Pay With Venmo</string>
+    <string name="pay_with_paypal">Pay With PayPal</string>
     <string name="university_email">someone@university.edu</string>
     <string name="facebook_app_id">1483518385254547</string>
 
