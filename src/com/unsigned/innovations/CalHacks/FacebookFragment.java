@@ -46,9 +46,11 @@ public class FacebookFragment extends Fragment {
        
         @Override
         public void onCreate(Bundle savedInstanceState) {
+        
             super.onCreate(savedInstanceState);
             uiHelper = new UiLifecycleHelper(getActivity(), callback);
             uiHelper.onCreate(savedInstanceState);
+            
         }
        
         @SuppressWarnings("deprecation")
@@ -64,10 +66,15 @@ public class FacebookFragment extends Fragment {
                                         lastName = user.getLastName();
                                         userID = user.getId();
                                         //userBirthday = user.getBirthday();
-                                        Log.i("User Info", firstName + lastName + userID + userName + userBirthday);
+                                        Log.i("User Info", firstName + lastName + userID + userName);
                                        
                                 }
                         }); 
+                		
+                		//if user is logged in 
+		                Intent intent = new Intent(getActivity(), MainActivity.class);
+		                //intent.putExtra("userID", userID);
+		                startActivity(intent);
                
 
             } else if (state.isClosed()) {
@@ -87,8 +94,6 @@ public class FacebookFragment extends Fragment {
                
             }
         };
-       
- 
        
         @Override
         public void onResume() {
@@ -118,13 +123,15 @@ public class FacebookFragment extends Fragment {
             editor.putString("ID", userID);
             editor.commit();
             
-            */
+             */
+            //if(.isSessionValid())
            
             myFirebaseReference.child("users");
             myFirebaseReference.child("users").child(userID).setValue(userID);
             myFirebaseReference.child("users").child(userID).child("first_name").setValue(firstName);
             myFirebaseReference.child("users").child(userID).child("last_name").setValue(lastName);
            // myFirebaseReference.child(userID).child("user_birthday").setValue(userBirthday);
+            MyProfile.getID(userID);
             
             try{
             	profileURL = getPhotoFacebook(userID);
@@ -132,14 +139,14 @@ public class FacebookFragment extends Fragment {
             }catch(Exception e){
             	e.printStackTrace();
             }
+           
             Intent intent = new Intent(getActivity(), MainActivity.class);
-        startActivity(intent);
+            //intent.putExtra("userID", userID);
+            startActivity(intent);
        
      
         }
-        
-        
-
+               
 		@Override
         public void onPause() {
             super.onPause();

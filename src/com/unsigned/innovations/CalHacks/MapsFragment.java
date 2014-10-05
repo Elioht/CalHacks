@@ -59,7 +59,6 @@ public class MapsFragment extends Fragment {
 		super.onResume();
 		if (map == null) {
 			map = fragment.getMap();
-			map.addMarker(new MarkerOptions().position(new LatLng(0, 0)));
 		}
 	}
 
