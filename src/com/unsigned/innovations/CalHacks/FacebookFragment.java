@@ -1,44 +1,31 @@
 package com.unsigned.innovations.CalHacks;
- 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.HttpURLConnection;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
- 
-import org.apache.http.HttpRequest;
-import org.json.JSONException;
-import org.json.JSONObject;
- 
-import com.facebook.HttpMethod;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
-import com.facebook.model.GraphObject;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 import com.firebase.client.Firebase;
-import com.firebase.client.utilities.Base64.InputStream;
- 
-import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
  
 public class FacebookFragment extends Fragment {
-
+	
+		public static final String PREFS = "ID";
         private static final String TAG = "facebookFragment";
         private UiLifecycleHelper uiHelper;
         private String firstName, lastName,userID, userName, userBirthday,userLocale;
@@ -76,7 +63,6 @@ public class FacebookFragment extends Fragment {
                                         firstName = user.getFirstName();
                                         lastName = user.getLastName();
                                         userID = user.getId();
-
                                         //userBirthday = user.getBirthday();
                                         Log.i("User Info", firstName + lastName + userID + userName + userBirthday);
                                        
@@ -125,6 +111,15 @@ public class FacebookFragment extends Fragment {
         public void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
             uiHelper.onActivityResult(requestCode, resultCode, data);
+            // store user id in shared preferences (string)
+            /*
+            SharedPreferences user_id = getSharedPreferences(PREFS,0);
+            Editor editor = user_id.edit();
+            editor.putString("ID", userID);
+            editor.commit();
+            
+            */
+           
             myFirebaseReference.child("users");
             myFirebaseReference.child("users").child(userID).setValue(userID);
             myFirebaseReference.child("users").child(userID).child("first_name").setValue(firstName);
@@ -142,12 +137,10 @@ public class FacebookFragment extends Fragment {
        
      
         }
-       
- 
- 
- 
- 
-        @Override
+        
+        
+
+		@Override
         public void onPause() {
             super.onPause();
             uiHelper.onPause();
