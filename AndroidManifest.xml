@@ -54,7 +54,8 @@
          <activity
             android:name = ".LoginActivity"
             android:icon="@drawable/logotext"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateVisible">
          </activity>
         <activity
             android:name=".FindRide"

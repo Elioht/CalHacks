@@ -8,9 +8,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 public class LoginActivity extends FragmentActivity implements Communicator {
-	private FacebookFragment facebookFragment;
-	private static final String TAG = "facebookFragment";
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
