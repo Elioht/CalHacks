@@ -1,10 +1,18 @@
 package com.unsigned.innovations.CalHacks;
 
 import android.content.Context;
+
+import android.content.Intent;
+import android.content.res.AssetManager;
+
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.AdapterView;
@@ -23,7 +31,7 @@ import android.widget.ListView;
 public class MainActivity extends ActionBarActivity implements OnItemClickListener {
 	
 	private DrawerLayout drawerLayout;
-	private ActionBarDrawerToggle drawerListener;
+	public ActionBarDrawerToggle drawerListener;
 	private ListView listView;
 	private String[] options;
 	private MyAdapter myAdapter;
@@ -129,11 +137,34 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		//switch statement
 		//launch activity depending on the position
 		selectItem(position);
+		
 	}
 	
 	public void selectItem(int position){
 		listView.setItemChecked(position, true);
 		setTitle(options[position]);
+		// Create a new fragment and specify the planet to show based on position
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		switch(position)
+		{
+		case 0:
+            transaction.replace(R.id.mainContent, new MapsFragment()).commit();
+			break;
+		case 1:
+            transaction.replace(R.id.mainContent, new MyProfile()).commit();
+			break;
+		case 2:
+			transaction.replace(R.id.mainContent, new MyPayments()).commit();
+		    break;
+		case 3:
+            transaction.replace(R.id.mainContent, new TabMyRides()).commit();
+			break;
+		case 4:
+			transaction.replace(R.id.mainContent, new MyNotifications()).commit();
+			break;
+		}
+	    drawerLayout.closeDrawer(listView);
+	    return;
 	}
 
 	public void setTitle(String title){
