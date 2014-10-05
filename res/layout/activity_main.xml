@@ -11,10 +11,10 @@
         ></FrameLayout>
     
     <ListView android:id="@+id/drawerList"
-        android:background="#AA66CC"
+        android:background="#FFFFFF"
         android:dividerHeight="0dp"
         android:layout_height="match_parent"
         android:layout_width="240dp"
         android:layout_gravity="left"
-        ></ListView>
+     ></ListView>
 </android.support.v4.widget.DrawerLayout>

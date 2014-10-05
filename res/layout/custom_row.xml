@@ -5,20 +5,21 @@
     android:orientation="horizontal" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/emailConfirmationImageView"
         android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_height="47dp"
+        android:gravity="center_vertical"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         />
 
     <TextView
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="match_parent"
-        
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

@@ -30,7 +30,7 @@ public class CustomList extends ArrayAdapter<String> {
 		LayoutInflater inflater = context.getLayoutInflater();
 		View rowView = inflater.inflate(R.layout.custom_row, null, true);
 		TextView txtTitle = (TextView) rowView.findViewById(R.id.textView1);
-		ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView1);
+		ImageView imageView = (ImageView) rowView.findViewById(R.id.emailConfirmationImageView);
 		txtTitle.setHeight(30);
 	    txtTitle.setMinimumHeight(30);
 		txtTitle.setText(web.get(position));

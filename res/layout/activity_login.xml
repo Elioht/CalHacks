@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.inter_fragment.MainActivity"
+    tools:context="com.unsigned.innovations.CalHacks.LoginActivity"
     android:background="#00BBFF"
     android:orientation="vertical" >
     
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.example.inter_fragment.FragmentA"
+        android:name="com.unsigned.innovations.CalHacks.EmailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.example.inter_fragment.FragmentB"
+        android:name="com.unsigned.innovations.CalHacks.FacebookFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/fragment1"
