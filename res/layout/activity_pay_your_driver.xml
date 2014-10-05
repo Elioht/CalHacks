@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#E8F8FA"
     tools:context="com.unsigned.innovations.CalHacks.PayYourDriver" >
 
     <TextView
@@ -36,6 +37,6 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp"
-        android:src="@drawable/abc_ic_clear_holo_light" />
+        android:src="@drawable/logotext" />
 
 </RelativeLayout>
