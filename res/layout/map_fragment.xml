@@ -2,15 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.swipe_tabs.FragmentA"
+    tools:context="com.unsigned.innovations.CalHacks.MapFragment"
     android:background="#FFCC00" >
 
     <!-- TODO: Update blank fragment layout -->
 
-       <fragment
+    <fragment
            android:id="@+id/map"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           class="com.google.android.gms.maps.SupportMapFragment" />
+           class="com.google.android.gms.maps.SupportMapFragment"
+           android:name="com.unsigned.innovations.CalHacks.MainActivity" />
 
 </FrameLayout>
