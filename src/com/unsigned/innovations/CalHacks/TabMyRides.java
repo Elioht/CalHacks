@@ -92,6 +92,7 @@ ActionBar.TabListener {
 		// TODO Auto-generated method stub
 		super.onPause(); 
 		actionBar.removeAllTabs();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 	}
 	
 	@Override

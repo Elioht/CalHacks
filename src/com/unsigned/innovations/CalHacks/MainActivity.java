@@ -128,13 +128,13 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		switch(position)
 		{
 		case 0:
-            transaction.replace(R.id.mainContent, new TabMyRides()).commit();
+            transaction.replace(R.id.mainContent, new MapsFragment()).commit();
 			break;
 		case 1:
             transaction.replace(R.id.mainContent, new MyProfile()).commit();
 			break;
 		case 2:
-			transaction.replace(R.id.mainContent, new MyPayment()).commit();
+			transaction.replace(R.id.mainContent, new MyPayments()).commit();
 		    break;
 		case 3:
             transaction.replace(R.id.mainContent, new TabMyRides()).commit();
