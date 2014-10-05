@@ -39,12 +39,18 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
-        android:theme="@style/AppTheme" >
-      
+        android:theme="@style/AppTheme"
+        >
+        <activity
+            android:name=".FindRide"
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme" >
+        </activity>
+
         <activity
             android:name=".LoginActivity"
             android:icon="@drawable/logotext"
-            android:theme="@style/AppTheme"
+            
             android:windowSoftInputMode="stateVisible" >
         </activity>
         <activity
@@ -61,11 +67,7 @@
             </intent-filter>
             
         </activity>
-          <activity
-            android:name=".FindRide"
-            android:icon="@drawable/logotext"
-            android:theme="@style/AppTheme" >
-        </activity>
+
         <activity
             android:name=".RideSetup"
             android:icon="@drawable/logotext"

@@ -12,7 +12,6 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.firebase.client.utilities.Base64.InputStream;
-import com.squareup.picasso.Picasso;
 
 import android.app.Activity;
 import android.app.AlertDialog;
