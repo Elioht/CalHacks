@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		myAdapter = new MyAdapter(this);
 		listView.setAdapter(myAdapter);
 		options = getResources().getStringArray(R.array.nav_drawer);
-		drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_navigation_drawer, R.string.drawer_open, R.string.drawer_close){
+		drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close){
 
 			@Override
 			public void onDrawerOpened(View drawerView) {
