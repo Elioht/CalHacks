@@ -50,7 +50,6 @@ public class FacebookFragment extends Fragment {
 	    }
 	}
 	
-	
 
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 	    @Override
@@ -62,8 +61,6 @@ public class FacebookFragment extends Fragment {
 	       
 	    }
 	};
-	
-
 	
 	@Override
 	public void onResume() {
@@ -93,10 +90,6 @@ public class FacebookFragment extends Fragment {
       
 	}
 	
-
-
-
-
 	@Override
 	public void onPause() {
 	    super.onPause();

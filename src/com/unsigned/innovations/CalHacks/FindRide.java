@@ -24,8 +24,6 @@ public class FindRide extends Activity {
 	ArrayList<String> listItems =new ArrayList<String>();
 	ArrayList<Integer> imageId =new ArrayList<Integer>();
 	
-	
-	
 	ExpandableListView exv;
 	String number;
 
@@ -74,13 +72,9 @@ public class FindRide extends Activity {
 					});
 					
 					AlertDialog alert = builder.create();
-		            alert.show();
-					
-				
+		            alert.show();	
 				}
-	
 	     });
-		
 	}
 
 	@Override
