@@ -167,6 +167,4 @@ class MyAdapter extends BaseAdapter{
 		
 		return row;	
 	}
-	
-	
 }
