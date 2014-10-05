@@ -6,20 +6,18 @@ import java.net.URL;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 
 import com.firebase.client.utilities.Base64.InputStream;
 
-public class ProfilePicture {
+public class ProfilePicture extends AsyncTask<URL, Integer, Bitmap>{
 
-	private URL url;
-	ProfilePicture(URL url){
-		this.url = url;
-	}
-	public Bitmap getBitmap(){
-
+	@Override
+	protected Bitmap doInBackground(URL... params) {
+		// TODO Auto-generated method stub
         Bitmap bitmap;
 		try {
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) params.clone()[0].openConnection();
             connection.setDoInput(true);
             connection.setInstanceFollowRedirects( true );
             connection.connect();

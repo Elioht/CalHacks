@@ -143,6 +143,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	public void selectItem(int position){
 		listView.setItemChecked(position, true);
 		setTitle(options[position]);
+
 		// Create a new fragment and specify the planet to show based on position
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		switch(position)
