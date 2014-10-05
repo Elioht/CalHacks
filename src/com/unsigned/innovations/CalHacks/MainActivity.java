@@ -2,19 +2,17 @@ package com.unsigned.innovations.CalHacks;
 
 
 
-import android.content.Context;
+import com.google.android.gms.maps.SupportMapFragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
-
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.AdapterView;
@@ -32,6 +30,7 @@ import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity implements OnItemClickListener {
 	
+	public static FragmentManager fragmentManager;
 	private DrawerLayout drawerLayout;
 	public ActionBarDrawerToggle drawerListener;
 	private ListView listView;
@@ -55,6 +54,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		listView = (ListView)findViewById(R.id.drawerList);
 		myAdapter = new MyAdapter(this);
 		listView.setAdapter(myAdapter);
+		fragmentManager = getSupportFragmentManager();
 		options = getResources().getStringArray(R.array.nav_drawer);
 		drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_navigation_drawer, R.string.drawer_open, R.string.drawer_close){
 
@@ -128,8 +128,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		switch(position)
 		{
 		case 0:
-            transaction.replace(R.id.mainContent, new MapsFragment()).commit();
-			break;
+			transaction.replace(R.id.mainContent, new MapsFragment()).commit(); 
 		case 1:
             transaction.replace(R.id.mainContent, new MyProfile()).commit();
 			break;
