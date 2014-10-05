@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F8FA"
+    android:background="#FFFFFF"
     android:gravity="center_horizontal"
     android:orientation="vertical" >
- 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="Enter Your University Email"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
- 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
- 
+
+        <ImageView
+            android:id="@+id/emailConfirmationImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/emailAddressEditText"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="31dp"
+            android:layout_weight="0.80"
+            android:src="@drawable/abc_ic_clear" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="49dp"
+            android:gravity="center"
+            android:text="Piggy Back is a rideshare system created by students for students\n\nPlease enter your edu address."
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
         <EditText
             android:id="@+id/emailAddressEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
             android:layout_weight="0.18"
             android:ems="10"
             android:hint="@string/university_email"
             android:inputType="textEmailAddress"
             android:textSize="@dimen/activity_vertical_margin" />
-        <ImageView
-            android:id="@+id/emailConfirmationImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.80"
-            android:src="@drawable/abc_ic_clear" />
-    </LinearLayout>
-</LinearLayout>
+
+</RelativeLayout>

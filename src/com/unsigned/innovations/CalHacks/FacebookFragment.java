@@ -70,11 +70,9 @@ public class FacebookFragment extends Fragment {
                                         userID = user.getId();
                                         userName = user.getUsername();
                                         userBirthday = user.getBirthday();
-                                        Log.i("User Info", firstName + lastName + userID + userName + userBirthday);
-                                       
+                                        Log.i("User Info", firstName + lastName + userID + userName + userBirthday);   
                                 }
                         });            
-               
             } else if (state.isClosed()) {
                 Log.i(TAG, "Logged out...");
             }
