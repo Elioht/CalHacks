@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public class MapsFragment extends Fragment {
 	}
 
 
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,6 +67,14 @@ public class MapsFragment extends Fragment {
 			//map.addMarker(new MarkerOptions().position(new LatLng(0, 0)));
 		}
 	}
+	
+	public void onDestroyView() {
+		   super.onDestroyView(); 
+		   Fragment fragment = (getFragmentManager().findFragmentById(R.id.map));   
+		   FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+		   ft.remove(fragment);
+		   ft.commit();
+		}
 	
 	
 	
