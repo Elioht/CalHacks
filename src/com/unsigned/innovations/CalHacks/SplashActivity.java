@@ -2,10 +2,17 @@ package com.unsigned.innovations.CalHacks;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
 
 public class SplashActivity extends ActionBarActivity {
 	
@@ -25,7 +32,7 @@ public class SplashActivity extends ActionBarActivity {
             @Override
             public void run() {
                
-        		Intent mainIntent = new Intent(SplashActivity.this,LoginActivity.class);
+        		Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(mainIntent);
                 finish();
             }
