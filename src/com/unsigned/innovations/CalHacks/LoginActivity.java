@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 public class LoginActivity extends FragmentActivity {
 		private FacebookFragment facebookFragment;
-		private static final String TAG = "facebookFragment";
 		
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
