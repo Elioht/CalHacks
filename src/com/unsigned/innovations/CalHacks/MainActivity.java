@@ -103,6 +103,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	public void selectItem(int position){
 		listView.setItemChecked(position, true);
 		setTitle(options[position]);
+		
 	}
 
 	public void setTitle(String title){

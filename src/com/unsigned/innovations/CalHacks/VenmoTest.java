@@ -5,7 +5,9 @@ import java.math.BigDecimal;
 
 import org.json.JSONException;
 
+import com.paypal.android.sdk.payments.PayPalAuthorization;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
+import com.paypal.android.sdk.payments.PayPalFuturePaymentActivity;
 import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
@@ -20,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class VenmoTest extends Activity {
 	
@@ -29,6 +32,7 @@ public class VenmoTest extends Activity {
 			"AWfR7RCMYUjyEoX1OidzYFXwiDa6j60UGwiBvnZI27TxcErRU-YQAzAvNBxr";
 	private static PayPalConfiguration config = new PayPalConfiguration().
 			environment(PayPalConfiguration.ENVIRONMENT_NO_NETWORK).clientId(CLIENT_ID);
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -86,24 +90,7 @@ public class VenmoTest extends Activity {
 		});
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.venmo_test, menu);
-		return true;
-	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 	@Override
 	protected void onActivityResult (int requestCode, int resultCode, Intent data) {
 	    if (resultCode == Activity.RESULT_OK) {
@@ -128,6 +115,7 @@ public class VenmoTest extends Activity {
 	        Log.i("paymentExample", "An invalid Payment or PayPalConfiguration was submitted. Please see the docs.");
 	    }
 	}
+	
 	@Override
 	public void onDestroy() {
 	  stopService(new Intent(this, PayPalService.class));
