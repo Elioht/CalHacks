@@ -26,7 +26,6 @@ public class ProfilePicture extends AsyncTask<URL, Integer, Bitmap>{
             bitmap = BitmapFactory.decodeStream(inputStream);
             return bitmap;
         } catch (IOException e) {
-
             e.printStackTrace();
         }
         return null;

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    
-      <ImageView
+    <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="300dp"
         android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
       
     <TableRow
@@ -24,5 +23,4 @@
 
     </TableRow>
 
-
-</LinearLayout>
+</TableRow>
