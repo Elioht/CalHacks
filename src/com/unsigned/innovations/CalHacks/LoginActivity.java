@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 public class LoginActivity extends FragmentActivity implements Communicator {
@@ -15,6 +16,12 @@ public class LoginActivity extends FragmentActivity implements Communicator {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		android.app.FragmentManager fragmentManager = getFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		
+		EmailFragment emailFragment = new EmailFragment();
+		fragmentTransaction.add(R.id.emailContainer, emailFragment);
+		fragmentTransaction.commit();
 	}
 
 	@Override
@@ -36,6 +43,14 @@ public class LoginActivity extends FragmentActivity implements Communicator {
 	@Override
 	public void response(boolean accepted) {
 		// TODO Auto-generated method stub
-		android.app.FragmentManager manager = getFragmentManager();
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		
+		if(accepted){
+			FacebookFragment fb = new FacebookFragment();
+			fragmentTransaction.add(R.id.facebookContainer, fb);
+			fragmentTransaction.commit();
+		}
+		
 	}
 }
