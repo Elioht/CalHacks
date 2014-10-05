@@ -127,11 +127,18 @@ public class FacebookFragment extends Fragment {
             //if(.isSessionValid())
            
             myFirebaseReference.child("users");
-            myFirebaseReference.child("users").child(userID).setValue(userID);
-            myFirebaseReference.child("users").child(userID).child("first_name").setValue(firstName);
-            myFirebaseReference.child("users").child(userID).child("last_name").setValue(lastName);
-           // myFirebaseReference.child(userID).child("user_birthday").setValue(userBirthday);
-            MyProfile.getID(userID);
+
+            try
+            {
+            	 myFirebaseReference.child("users").child(userID).setValue(userID);
+                 myFirebaseReference.child("users").child(userID).child("first_name").setValue(firstName);
+                 myFirebaseReference.child("users").child(userID).child("last_name").setValue(lastName);
+                 myFirebaseReference.child(userID).child("user_birthday").setValue(userBirthday);
+            	
+            }catch(Exception e)
+            {
+            	e.printStackTrace();
+            }
             
             try{
             	profileURL = getPhotoFacebook(userID);
@@ -141,7 +148,6 @@ public class FacebookFragment extends Fragment {
             }
            
             Intent intent = new Intent(getActivity(), MainActivity.class);
-            //intent.putExtra("userID", userID);
             startActivity(intent);
        
      

@@ -61,7 +61,7 @@ public class EmailFragment extends Fragment {
 					email = s.toString();
 					emailConfirmationImageView.setImageDrawable(getResources()
 							.getDrawable(
-									R.drawable.abc_ab_bottom_solid_dark_holo));
+									R.drawable.green));
 					emailAddressEditText.clearFocus();
 					InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(
 						      Context.INPUT_METHOD_SERVICE);
@@ -71,7 +71,7 @@ public class EmailFragment extends Fragment {
 					
 				} else {
 					emailConfirmationImageView.setImageDrawable(getResources()
-							.getDrawable(R.drawable.abc_ic_clear));
+							.getDrawable(R.drawable.red));
 				}
 			}
 
