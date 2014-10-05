@@ -37,6 +37,14 @@
             android:name=".PayYourDriver"
             android:label="@string/title_activity_pay_your_driver" >
         </activity>
+        
+        <activity 
+            android:name="com.facebook.LoginActivity"
+            android:label = "title_facebook_login"
+    		>
+        </activity>
+        
+        <meta-data android:value="@string/facebook_app_id" android:name="com.facebook.sdk.ApplicationId"/>
          
     </application>
 
