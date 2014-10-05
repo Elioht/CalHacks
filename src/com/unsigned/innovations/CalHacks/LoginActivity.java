@@ -11,35 +11,31 @@ public class LoginActivity extends FragmentActivity implements Communicator {
 	private static final String TAG = "facebookFragment";
 
 	@Override
-
-
-		    protected void onCreate(Bundle savedInstanceState) {		
-		    			// TODO Auto-generated method stub		
-		    			super.onCreate(savedInstanceState);		
-		    			setContentView(R.layout.activity_login);		
-		    		}		
-		    				
-		    		@Override		
-		    		public boolean onCreateOptionsMenu(Menu menu) {		
-		    			// TODO Auto-generated method stub		
-		    			getMenuInflater().inflate(R.menu.splash, menu);		
-		    			return true;		
-		    		}		
-		    				
-		    		@Override		
-		    		public boolean onOptionsItemSelected(MenuItem item) {		
-		    			// TODO Auto-generated method stub		
-		    			int id = item.getItemId();		
-		    			if(id == R.id.action_settings)		
-		    				return true;		
-		    			return super.onOptionsItemSelected(item);		
-		    		}		
-		    			
-		    		@Override		
-		    		public void response(boolean accepted) {		
-		    			// TODO Auto-generated method stub		
-		    			android.app.FragmentManager manager= getFragmentManager();
-		    		}
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_login);
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		getMenuInflater().inflate(R.menu.splash, menu);
+		return true;
+	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		int id = item.getItemId();
+		if (id == R.id.action_settings)
+			return true;
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void response(boolean accepted) {
+		// TODO Auto-generated method stub
+		android.app.FragmentManager manager = getFragmentManager();
+	}
+}
