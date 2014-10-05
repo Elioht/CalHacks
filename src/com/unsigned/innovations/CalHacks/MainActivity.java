@@ -5,6 +5,9 @@ package com.unsigned.innovations.CalHacks;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import android.content.Context;
+
+
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
@@ -56,7 +59,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		listView.setAdapter(myAdapter);
 		fragmentManager = getSupportFragmentManager();
 		options = getResources().getStringArray(R.array.nav_drawer);
-		drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_navigation_drawer, R.string.drawer_open, R.string.drawer_close){
+		drawerListener = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close){
 
 			@Override
 			public void onDrawerOpened(View drawerView) {
@@ -78,6 +81,28 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		getActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		listView.setOnItemClickListener(this);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+	    if (  Integer.valueOf(android.os.Build.VERSION.SDK) < 7 //Instead use android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ECLAIR
+	            && keyCode == KeyEvent.KEYCODE_BACK
+	            && event.getRepeatCount() == 0) {
+	        // Take care of calling this method on earlier versions of
+	        // the platform where it doesn't exist.
+	        onBackPressed();
+	    }
+
+	    return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	public void onBackPressed() {
+	    // This will be called either automatically for you on 2.0
+	    // or later, or by the code above on earlier versions of the
+	    // platform.
+	    return;
 	}
 	
 	@Override
@@ -123,6 +148,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	public void selectItem(int position){
 		listView.setItemChecked(position, true);
 		setTitle(options[position]);
+
 		// Create a new fragment and specify the planet to show based on position
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 		switch(position)
@@ -205,7 +231,5 @@ class MyAdapter extends BaseAdapter{
 		imageView1.setImageResource(images[position]);
 		
 		return row;	
-	}
-	
-	
+	}	
 }

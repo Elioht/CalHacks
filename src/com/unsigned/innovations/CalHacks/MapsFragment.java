@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+
 import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +29,15 @@ public class MapsFragment extends Fragment {
 
 	private SupportMapFragment fragment;
 	private GoogleMap map;
+
+
+	public MapsFragment() {
+		// Required empty public constructor
+	}
+
+
 	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		return inflater.inflate(R.layout.map_fragment, container, false);
@@ -52,4 +62,22 @@ public class MapsFragment extends Fragment {
 			map.addMarker(new MarkerOptions().position(new LatLng(0, 0)));
 		}
 	}
+
+	
+	public void onDestroyView() {
+		   super.onDestroyView(); 
+		   Fragment fragment = (getFragmentManager().findFragmentById(R.id.map));   
+		   FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+		   ft.remove(fragment);
+		   ft.commit();
+		}
+	
+	
+	
+	
+
+	// TODO: Rename method, update argument and hook method into UI event
+	
+	
+
 }

@@ -8,6 +8,8 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -16,6 +18,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TabHost;
+import android.widget.TabWidget;
 
 public class TabMyRides extends Fragment implements
 ActionBar.TabListener {
@@ -42,15 +46,6 @@ ActionBar.TabListener {
 	//actionBar.setHomeButtonEnabled(false);
 	actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);		
 	
-	// Adding Tabs
-//	for (String tab_name : tabs) {
-//		actionBar.addTab(actionBar.newTab().setText(tab_name)
-//				.setTabListener(this));
-//	}
-	
-	/**
-	 * on swiping the viewpager make respective tab selected
-	 * */
 	viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 	
 		@Override
@@ -99,11 +94,16 @@ ActionBar.TabListener {
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
+		//actionBar.setBackgroundDrawable(new ColorDrawable(0x000000));
 		for (String tab_name : tabs) {
 			actionBar.addTab(actionBar.newTab().setText(tab_name)
 					.setTabListener(this));
 		}
+	
+		
+		
 	}
+	
 	
 
 }
