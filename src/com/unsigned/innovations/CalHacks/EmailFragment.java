@@ -63,8 +63,7 @@ public class EmailFragment extends Fragment {
 						      Context.INPUT_METHOD_SERVICE);
 						imm.hideSoftInputFromWindow(emailAddressEditText.getWindowToken(), 0);
 					comm.response(true);
-					Intent intent = new Intent(getActivity(), MainActivity.class);
-					startActivity(intent);
+					
 					
 				} else {
 					emailConfirmationImageView.setImageDrawable(getResources()
