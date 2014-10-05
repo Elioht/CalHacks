@@ -37,7 +37,9 @@
             </intent-filter>
         </activity>
          <activity
-            android:name = ".LoginActivity">
+            android:name = ".LoginActivity"
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme">
          </activity>
         <activity
             android:name=".FindRide"
@@ -45,13 +47,20 @@
         </activity>
         <activity
             android:name=".RideSetup"
-            android:label="@string/title_activity_ride_setup" >
+            android:label="@string/title_activity_ride_setup"
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme" >
         </activity>
-        <activity android:name=".MainActivity" >
+        <activity 
+            android:name=".MainActivity"
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".PayYourDriver"
-            android:label="@string/title_activity_pay_your_driver" >
+            android:label="@string/title_activity_pay_your_driver"
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".SplashActivity"
