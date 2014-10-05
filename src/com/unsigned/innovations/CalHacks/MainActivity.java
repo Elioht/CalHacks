@@ -83,6 +83,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		
 		drawerLayout.setDrawerListener(drawerListener);
 		getActionBar().setHomeButtonEnabled(true);
+		
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		listView.setOnItemClickListener(this);
 	}
