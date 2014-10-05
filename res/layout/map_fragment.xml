@@ -15,9 +15,5 @@
            class="com.google.android.gms.maps.SupportMapFragment"
            android:name="com.unsigned.innovations.CalHacks.MainActivity" />
     
-   	<Button
-   	    android:text="Set up ride"
-   	    android:layout_width="wrap_content"
-   	    android:layout_height="wrap_content" />
 
 </FrameLayout>
