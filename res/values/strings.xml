@@ -11,8 +11,30 @@
         <item>My Profile</item>
         <item>Payment</item>
         <item>My Rides</item>
+        <item>Notifications</item>
     </string-array>
 
     <string name="title_activity_find_ride">FindRide</string>
+    <string name="title_activity_ride_set_up">RideSetUp</string>
+    <string name="title_activity_time_picker_fragment">TimePickerFragment</string>
+    <string name="title_activity_ride_setup">RideSetup</string>
+    <string name="address">Address</string>
+    <string name="seatsAvailable">Seats Available</string>
+    <string name="compensation">Compensation</string>
+    <string name="amount">$0.00</string>
+    <string name="flat_rate">Flat Rate</string>
+    <string name="per_person">Per Person</string>
+    <string name="donations_welcomed">Donations Welcomed</string>
+    <string name="date">Date</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="default_seats">0</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_pay_your_driver">PayYourDriver</string>
+    <string name="piggy_back_thanks">Thanks For Using Piggy Back!</string>
+    <string name="pay_driver">Don\'t Forget To Pay Your Driver!</string>
+    <string name="title_activity_venmo_test">VenmoTest</string>
+    <string name="pay_with_venmo">Pay With Venmo</string>
+    <string name="pay_with_paypal">Pay With PayPal</string>
 
 </resources>
