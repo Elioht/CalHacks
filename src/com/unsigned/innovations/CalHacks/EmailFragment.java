@@ -3,6 +3,7 @@ package com.unsigned.innovations.CalHacks;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class EmailFragment extends Fragment {
 
@@ -26,7 +28,10 @@ public class EmailFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		return inflater.inflate(R.layout.email_fragment, container, false);
+		View view = inflater.inflate(R.layout.email_fragment, container, false);
+		TextView text = (TextView) view.findViewById(R.id.textView1);
+		text.setTextColor(Color.parseColor("#8D1919"));
+		return view;
 	}
 
 	@Override
