@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <ImageView
@@ -10,17 +10,39 @@
         android:layout_height="300dp"
         android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
       
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
-    
-        <ListView
+    	<!--  <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
-        </ListView>
+        </ListView> -->
+        
+        <TextView
+            android:id="@+id/name"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Arturo Lopez"
+            android:textSize="25dp" />
+       
+        <TextView
+            android:id="@+id/phone_number"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Phone number: (831)578-5358"
+            android:textSize="25dp" />
+        
+     
+        <com.facebook.widget.LoginButton
+        android:id="@+id/logout_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp" />
+        
+    </LinearLayout>
 
-    </TableRow>
-
-</TableRow>
+</LinearLayout >

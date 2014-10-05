@@ -166,6 +166,7 @@ public class MapsFragment extends Fragment {
 		super.onResume();
 		if (map == null) {
 			map = fragment.getMap();
+
 			CameraUpdate center=
 			        CameraUpdateFactory.newLatLng(new LatLng(37.87,
 			                                                 -122.25));
@@ -175,6 +176,7 @@ public class MapsFragment extends Fragment {
 			    map.animateCamera(zoom);
 			map.addMarker(new MarkerOptions().position(new LatLng(37.87, -122.25)));
 			map.addMarker(new MarkerOptions().position(new LatLng(36.65, -121.79)));
+
 		}
 	}
 

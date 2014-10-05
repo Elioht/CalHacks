@@ -29,14 +29,18 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	private ListView listView;
 	private String[] options;
 	private MyAdapter myAdapter;
+	public String userID;
 	int previousPos;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_main);
+		if(savedInstanceState != null){
+			userID = savedInstanceState.getString("userID");
+		}
 		
 		previousPos = 0;
 		FragmentManager fragmentManager = getSupportFragmentManager();

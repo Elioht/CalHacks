@@ -2,7 +2,6 @@ package com.unsigned.innovations.CalHacks;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -31,6 +30,8 @@ public class EmailFragment extends Fragment {
 		View view = inflater.inflate(R.layout.email_fragment, container, false);
 		TextView text = (TextView) view.findViewById(R.id.textView1);
 		text.setTextColor(Color.parseColor("#8D1919"));
+		
+		
 		return view;
 	}
 
