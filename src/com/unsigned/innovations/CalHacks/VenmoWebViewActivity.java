@@ -1,5 +1,6 @@
 package com.unsigned.innovations.CalHacks; 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +18,7 @@ public class VenmoWebViewActivity extends Activity {
 	private WebView mVenmoWebView;
 	String mUrl;
 	
-	@Override
+	@SuppressLint("JavascriptInterface") @Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);

@@ -1,12 +1,15 @@
 package com.unsigned.innovations.CalHacks;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -32,6 +35,9 @@ public class EmailFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		emailAddressEditText = (EditText) getActivity().findViewById(
 				R.id.emailAddressEditText);
+		emailAddressEditText.setFocusableInTouchMode(true);
+		emailAddressEditText.setFocusable(true);
+		emailAddressEditText.requestFocus();
 		emailConfirmationImageView = (ImageView) getActivity().findViewById(
 				R.id.emailConfirmationImageView);
 		comm = (Communicator) getActivity();
@@ -50,7 +56,13 @@ public class EmailFragment extends Fragment {
 					emailConfirmationImageView.setImageDrawable(getResources()
 							.getDrawable(
 									R.drawable.abc_ab_bottom_solid_dark_holo));
+					emailAddressEditText.clearFocus();
+					InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(
+						      Context.INPUT_METHOD_SERVICE);
+						imm.hideSoftInputFromWindow(emailAddressEditText.getWindowToken(), 0);
 					comm.response(true);
+					
+					
 				} else {
 					emailConfirmationImageView.setImageDrawable(getResources()
 							.getDrawable(R.drawable.abc_ic_clear));

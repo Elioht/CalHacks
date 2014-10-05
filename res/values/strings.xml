@@ -8,6 +8,7 @@
     <string name="drawer_close">Close Navigation Drawer</string>
 
     <string-array name="nav_drawer">
+        <item>Home</item>
         <item>My Profile</item>
         <item>Payment</item>
         <item>My Rides</item>
@@ -33,10 +34,15 @@
     <string name="title_activity_pay_your_driver">PayYourDriver</string>
     <string name="piggy_back_thanks">Thanks For Using Piggy Back!</string>
     <string name="pay_driver">Don\'t Forget To Pay Your Driver!</string>
+    <string name="title_activity_login_activity">Login</string>
     <string name="title_activity_venmo_test">VenmoTest</string>
     <string name="pay_with_venmo">Pay With Venmo</string>
     <string name="pay_with_paypal">Pay With PayPal</string>
     <string name="university_email">someone@university.edu</string>
+    <string name="title_activity_main">MainActivity</string>
     <string name="facebook_app_id">1483518385254547</string>
+    <string name="title_activity_my_profile">MyProfile</string>
+    <string name="title_activity_my_payments">MyPayments</string>
+    <string name="title_activity_my_notifications">MyNotifications</string>
 
 </resources>
