@@ -40,11 +40,7 @@
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name=".FindRide"
-            android:icon="@drawable/logotext"
-            android:theme="@style/AppTheme" >
-        </activity>
+      
         <activity
             android:name=".LoginActivity"
             android:icon="@drawable/logotext"
@@ -63,6 +59,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             
+        </activity>
+          <activity
+            android:name=".FindRide"
+            android:icon="@drawable/logotext"
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".RideSetup"

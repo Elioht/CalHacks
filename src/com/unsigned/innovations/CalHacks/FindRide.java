@@ -38,6 +38,11 @@ public class FindRide extends Activity {
 	ArrayList<String> listItems = new ArrayList<String>();
 	ArrayList<Bitmap> imageId = new ArrayList<Bitmap>();
 	ArrayList<String> urls = new ArrayList<String>();
+	ArrayList<Double> ratings = new ArrayList<Double>();
+	ArrayList<Integer> seats = new ArrayList<Integer>();
+	ArrayList<String> destinations = new ArrayList<String>();
+	
+	
 	CustomRides adapter = null;
 	ExpandableListView exv;
 	String number;
@@ -60,16 +65,16 @@ public class FindRide extends Activity {
 					public void onDataChange(DataSnapshot arg0) {
 						// TODO Auto-generated method stub
 
-						Random randomGenerator = new Random();
 						for (DataSnapshot ds : arg0.getChildren()) {
-						    randomInt = randomGenerator.nextInt(10);
-						    randnum = randomGenerator.nextInt(10);
 							listItems.add(ds.child("first_name").getValue()
 									.toString()
 									+ " "
-									+ ds.child("last_name").getValue().toString() + 
-									"\nRating: " + randnum + 
-									"\nPrice: " + randomInt);
+									+ ds.child("last_name").getValue().toString()
+									+ "\n" + ds.child("driving_to").getValue().toString()
+									+ "\n" + ds.child("rating").getValue().toString()
+									+ "\n" + ds.child("seats").getValue().toString());
+							
+							
 							
 							try {
 								
