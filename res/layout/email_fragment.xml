@@ -32,12 +32,14 @@
 
     <ImageView
         android:id="@+id/emailConfirmationImageView"
-        android:layout_width="78dp"
-        android:layout_height="148dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_marginRight="22dp"
-        android:src="@drawable/greensmall" />
+        android:layout_width="31dp"
+        android:layout_height="26dp"
+        android:layout_alignBottom="@+id/emailAddressEditText"
+        android:layout_alignTop="@+id/emailAddressEditText"
+        android:layout_toRightOf="@+id/emailAddressEditText"
+        android:src="@drawable/red" />
+
+"
 
 
 </RelativeLayout>
