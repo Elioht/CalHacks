@@ -1,5 +1,6 @@
 package com.unsigned.innovations.CalHacks;
 
+import android.app.ActionBar;
 import android.content.Context;
 
 import android.content.Intent;
@@ -35,16 +36,18 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	private ListView listView;
 	private String[] options;
 	private MyAdapter myAdapter;
+	int previousPos;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_main);
 		
+		previousPos = 0;
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		android.support.v4.app.FragmentTransaction  fragmentTransaction = fragmentManager.beginTransaction();
-		
 		MapsFragment mapFragment = new MapsFragment();
 		fragmentTransaction.add(R.id.mainContent, mapFragment);
 		fragmentTransaction.commit();
@@ -143,6 +146,13 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	public void selectItem(int position){
 		listView.setItemChecked(position, true);
 		setTitle(options[position]);
+		
+		if(previousPos == position)
+		{
+			drawerLayout.closeDrawer(listView);
+			return;
+		}
+			
 
 		// Create a new fragment and specify the planet to show based on position
 		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -164,12 +174,13 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 			transaction.replace(R.id.mainContent, new MyNotifications()).commit();
 			break;
 		}
+		previousPos = position;
 	    drawerLayout.closeDrawer(listView);
 	    return;
 	}
 
 	public void setTitle(String title){
-		getActionBar().setTitle(title);
+		getActionBar().setTitle("");
 	}
 
 }
