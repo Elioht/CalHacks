@@ -46,7 +46,7 @@ public class EmailFragment extends Fragment {
 					int count) {
 				// TODO Auto-generated method stub
 
-				if (s.toString().contains(".edu")) {
+				if (s.toString().endsWith(".edu")) {
 					email = s.toString();
 					emailConfirmationImageView.setImageDrawable(getResources()
 							.getDrawable(

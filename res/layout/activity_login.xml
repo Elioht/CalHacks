@@ -7,39 +7,42 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.unsigned.innovations.CalHacks.LoginActivity"
-    android:background="#00BBFF"
+    android:background="#E8F8FA"
     android:orientation="vertical" >
     
     <LinearLayout 
         android:layout_width="match_parent"
     	android:layout_height="match_parent"
-    android:layout_weight="1.0"
-    android:orientation="vertical">
+    	android:id="@+id/emailContainer"
+	    android:layout_weight="1.0"
+	    android:orientation="vertical">
 
+    <!--  
     <fragment
         android:id="@+id/fragment1"
         android:name="com.unsigned.innovations.CalHacks.EmailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+        
+      -->
     
     </LinearLayout>
     
-    <LinearLayout 
-           android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1.0"
-    android:orientation="vertical"
-        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/facebookContainer"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:orientation="vertical" >
 
+    <!-- 
     <fragment
         android:id="@+id/fragment2"
         android:name="com.unsigned.innovations.CalHacks.FacebookFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/fragment1"
-       
-         />
+        android:layout_height="match_parent"/>
+        -->
     
     </LinearLayout>
 
